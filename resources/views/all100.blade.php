@@ -39,8 +39,8 @@
                                 <div class="col-xl-8 col-lg-9">
                                     <!-- Hero Caption -->
                                     <div class="hero__caption">
-                                        <h1>fashion<br>changing<br>always</h1>
-                                        <a href="shop.html" class="btn">Shop Now</a>
+                                        <h1>all<br>products<br>with 100 MAD</h1>
+                                        <a href="{{route('user.shop')}}" class="btn">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                                 <div class="col-xl-8 col-lg-9">
                                     <!-- Hero Caption -->
                                     <div class="hero__caption">
-                                        <h1>fashion<br>changing<br>always</h1>
+                                        <h1>all<br>products<br>with 100 MAD</h1>
                                         <a href="shop.html" class="btn">Shop Now</a>
                                     </div>
                                 </div>
@@ -67,7 +67,7 @@
                                 <div class="col-xl-8 col-lg-9">
                                     <!-- Hero Caption -->
                                     <div class="hero__caption">
-                                        <h1>fashion<br>changing<br>always</h1>
+                                        <h1>all<br>products<br>with 100 MAD</h1>
                                         <a href="shop.html" class="btn">Shop Now</a>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                                     <span>Glasses</span>
                                 </div>
                                 <div class="favorit-items">
-                                 <a href="shop.html" class="btn">Shop Now</a>
+                                 <a href="{{route('glasses')}}" class="btn">Shop Now</a>
                              </div>
                          </div>
                      </div>
@@ -103,7 +103,7 @@
                                 <span>Watches</span>
                             </div>
                             <div class="favorit-items">
-                             <a href="shop.html" class="btn">Shop Now</a>
+                             <a href="{{route('watches')}}" class="btn">Shop Now</a>
                          </div>
                      </div>
                  </div>
@@ -116,7 +116,7 @@
                             <span>Jackets</span>
                         </div>
                         <div class="favorit-items">
-                         <a href="shop.html" class="btn">Shop Now</a>
+                         <a href="{{route('jackets')}}" class="btn">Shop Now</a>
                      </div>
                  </div>
              </div>
@@ -129,7 +129,7 @@
                         <span>Clothes</span>
                     </div>
                     <div class="favorit-items">
-                     <a href="shop.html" class="btn">Shop Now</a>
+                     <a href="{{route('clothes')}}" class="btn">Shop Now</a>
                  </div>
              </div>
          </div>

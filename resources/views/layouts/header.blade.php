@@ -5,7 +5,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/loder.png" alt="">
+                    <img src="{{asset('assets/img/logo/loder.png')}}" alt="">
                 </div>
             </div>
         </div>
@@ -20,7 +20,7 @@
                         <div class="header-left d-flex align-items-center">
                             <!-- Logo -->
                             <div class="logo">
-                                <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                                <a href="index.html"><img src="{{asset('assets/img/logo/logo.png')}}" alt=""></a>
                             </div>
                             <!-- Main-menu -->
                             <div class="main-menu  d-none d-lg-block">
@@ -59,7 +59,7 @@
                                     </li>
                                     <li>
                                         <div class="card-stor">
-                                            <a href="{{route('cartProduct')}}"><img src="assets/img/gallery/card.svg" alt=""></a>
+                                            <a href="{{route('cartProduct')}}"><img src="{{asset('assets/img/gallery/card.svg')}}" alt=""></a>
                                         </div>
                                     </li>
                                     <li>

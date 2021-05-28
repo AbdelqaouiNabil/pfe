@@ -14,7 +14,7 @@ class product extends Model
         'type',
     ];
     public function getPriceAttribute($value){
-        $newForme = "$".$value;
+        $newForme = "MAD".$value;
         return $newForme;
     }
     protected function categories(){

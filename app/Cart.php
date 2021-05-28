@@ -20,7 +20,7 @@ $this->totalPrice=0;
 
     public function addItems($id,$product){
 
-        $price =(int) str_replace("$","",$product->price);
+        $price =(int) str_replace("MAD","",$product->price);
         if(array_key_exists($id,$this->items)){
          $productToAdd=$this->items[$id];
          $productToAdd['quantity']++;

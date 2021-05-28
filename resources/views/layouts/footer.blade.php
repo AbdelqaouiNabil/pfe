@@ -8,7 +8,7 @@
                    <div class="single-footer-caption mb-30">
                       <!-- logo -->
                       <div class="footer-logo mb-35">
-                       <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                       <a href="index.html"><img src="{{asset('assets/img/logo/logo2_footer.png')}}" alt=""></a>
                    </div>
                    <div class="footer-tittle">
                        <div class="footer-pera">
@@ -66,8 +66,8 @@
                 <h4>Get in touch</h4>
                 <ul>
                     <li><a href="#">(89) 982-278 356</a></li>
-                    <li><a href="#">demo@colorlib.com</a></li>
-                    <li><a href="#">67/A, Colorlib, Green road, NYC</a></li>
+                    <li><a href="#">email@email.com</a></li>
+                    <li><a href="#">67/A,</a></li>
                 </ul>
             </div>
         </div>
@@ -83,7 +83,7 @@
                <div class="col-xl-12 ">
                    <div class="footer-copy-right text-center">
                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by 
                           <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                       </div>
                   </div>

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategorieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,13 +17,17 @@ use App\Http\Controllers\ProductController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('categories/watches',[CategorieController::class,'index'])->name('watches');
+Route::get('categories/glasses',[CategorieController::class,'glasses'])->name('glasses');
+Route::get('categories/jackets',[CategorieController::class,'jackets'])->name('jackets');
+Route::get('categories/clothes',[CategorieController::class,'clothes'])->name('clothes');
 Route::get('/',["uses"=>"ProductController@home",'as'=>'homeshop'] );
 Route::middleware(['middleware'=>'PreventBack'])->group(function () {
     Auth::routes();
 });
 
 Route::get('products',["uses"=>"ProductController@index",'as'=>'user.dashboard'] );
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['prefix'=>'admin','middleware'=>['isAdmin','auth','PreventBack']],function(){

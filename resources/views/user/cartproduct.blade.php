@@ -195,7 +195,7 @@ a:hover {
             @foreach ($cartItems->items as $item)
             <div class="row">
                 <div class="row main align-items-center">
-                    <div class="col-2"><img class="img-fluid" src="{{Storage::disk('local')->url('products_images/'.$item['data']['image'])}}" alt="" width="100px">></div>
+                    <div class="col-2"><img class="img-fluid" src="{{Storage::disk('local')->url('products_images/'.$item['data']['image'])}}" alt="" width="100px"></div>
                     <div class="col">
                         <div class="row text-muted">{{$item['data']['name']}}</div>
                         <div class="row">{{$item['data']['description']}}</div>
