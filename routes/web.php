@@ -39,7 +39,8 @@ Route::group(['prefix'=>'user','middleware'=>['isUser','auth','PreventBack']],fu
 Route::get('product/addToCart/{id}',["uses"=>"ProductController@AddProductToCart",'as'=>'addToCartProduct'] );
 Route::get('cart',["uses"=>"ProductController@showCart",'as'=>'cartProduct'] );
 Route::get('product/deleteFromCart/{id}',["uses"=>"ProductController@deleteFromCart",'as'=>'deleteItemFromCart']);
-    
+Route::get('product/createOrder',["uses"=>"ProductController@createOrder",'as'=>'createOrder']);
+Route::get('product/checkout',["uses"=>"ProductController@checkoutproducts",'as'=>'checkoutproduct']);
 });
 Route::get('shop',[UserController::class,'shop'])->name('user.shop');
 

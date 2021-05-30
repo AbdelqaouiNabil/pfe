@@ -222,7 +222,7 @@ a:hover {
             <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
                 <div class="col">TOTAL PRICE</div>
                 <div class="col text-right">${{$cartItems->totalPrice}}</div>
-            </div> <button class="btn">CHECKOUT</button>
+            </div> <button class="btn"><a href="{{route('checkoutproduct')}}">CHECKOUT</a></button>
         </div>
     </div>
 </div>
