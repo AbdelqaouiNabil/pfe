@@ -36,28 +36,29 @@ Route::group(['prefix'=>'admin','middleware'=>['isAdmin','auth','PreventBack']],
          Route::get('Dashboard',[AdminController::class,'index'])->name('admin.dashboard');
          Route::post('admin/delete',[AdminController::class,'del'] )->name('del');
          // edit for display edit image product
-Route::get('admin/editImageProduct/{id}',["uses"=>"AdminController@editImage",'as'=>'editImageProduct'] );
+Route::get('editImageProduct/{id}',["uses"=>"AdminController@editImage",'as'=>'editImageProduct'] );
 
 // edit for display edit form :
-  Route::get('admin/editProduct/{id}',["uses"=>"AdminController@editProduct",'as'=>'editProduct'] );
-  
+  Route::get('editProduct/{id}',["uses"=>"AdminController@editProduct",'as'=>'editProduct'] );
+  // edit product info
+Route::post('edit/{id}',["uses"=>"AdminController@edit",'as'=>'edit'] );
+// update image product
+Route::post('updateImage/{id}',["uses"=>"AdminController@updateImage",'as'=>'updateImageProduct'] );
+
+
+  // add new product form  
+Route::get('addNewProductForm/',["uses"=>"AdminController@addProductForm",'as'=>'addProductForm'] );
+ // add new product method
+Route::post('addProduct/',["uses"=>"AdminController@addProduct",'as'=>'addProduct'] );
+// remove product
+Route::get('remove/{id}',["uses"=>"AdminController@removeProduct",'as'=>'remove'] );
 });
 
 
 
 
 
-// update image product
-Route::post('admin/updateImage/{id}',["uses"=>"AdminController@updateImage",'as'=>'updateImageProduct'] );
 
-// edit product info
-Route::post('admin/edit/{id}',["uses"=>"AdminController@edit",'as'=>'edit'] );
-  // add new product form  
-Route::get('admin/addNewProductForm/',["uses"=>"AdminController@addProductForm",'as'=>'addProductForm'] );
- // add new product method
-Route::post('admin/addProduct/',["uses"=>"AdminController@addProduct",'as'=>'addProduct'] );
-// remove product
-Route::get('admin/remove/{id}',["uses"=>"AdminController@removeProduct",'as'=>'remove'] );
 
 // user route
 Route::group(['prefix'=>'user','middleware'=>['isUser','auth','PreventBack']],function(){
