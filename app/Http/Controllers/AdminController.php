@@ -107,6 +107,14 @@ public function removeProduct($id){
           return redirect()->route('admin.dashboard');
 }
 
+// remove checked product 
+public function del(Request $request){
+    $del = $request->input('delid');
+    
+           Models\Product::whereIn('id',$del)->delete();
+          return redirect()->route('admin.dashboard');
+}
+
 
 
 }

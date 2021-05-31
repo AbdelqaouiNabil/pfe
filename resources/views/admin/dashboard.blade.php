@@ -1,16 +1,20 @@
-
 @extends('layouts.admin')
 @section('products')
     
 
 
-<h1 class="h3 mb-0 text-gray-800 text-center mb-3">Products list</h1>
+<h1 class="h3 mb-4 text-gray-800 text-center mb-3">Products list</h1>
+
                        
 
 <!-- Content Row -->
 <div class="table-responsive">
+  <form action="{{route('del')}}" method="POST">
+    @csrf
+    <button type="submit" class="btn btn-danger" id="deleteAllSelectedProducts"> Delete Selected</button>
 <table class="table table-striped">
     <tr>
+      <th><input type="checkbox" id="checkAll"></th>
   <th>Id Product</th>
   <th>Name</th>
   <th>description</th>
@@ -22,7 +26,8 @@
   <th>Remove</th>
   </tr>
    @foreach ($products as $product)
-  <tr>
+  <tr id="pdi{{$product->id}}">
+    <td><input type="checkbox" name="delid[]" class="checkBoxClass" value="{{$product->id}}"></td>
       <td>{{$product->id}}</td>
       <td>{{$product->name}}</td>
       <td>{{$product->description}}</td>
@@ -37,5 +42,9 @@
       
   @endforeach
   </table> 
+</form>
+ 
 </div>
+
   @endsection
+  
