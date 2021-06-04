@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Payment\PaymentsController;
 use App\Http\Controllers\CategorieController;
 
 /*
@@ -17,18 +18,21 @@ use App\Http\Controllers\CategorieController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::middleware(['middleware'=>'PreventBack'])->group(function () {
+  Auth::routes();
+});
+
 Route::get('categories/watches',[CategorieController::class,'index'])->name('watches');
 Route::get('categories/glasses',[CategorieController::class,'glasses'])->name('glasses');
 Route::get('categories/jackets',[CategorieController::class,'jackets'])->name('jackets');
 Route::get('categories/clothes',[CategorieController::class,'clothes'])->name('clothes');
 Route::get('/',["uses"=>"ProductController@home",'as'=>'homeshop'] );
-Route::middleware(['middleware'=>'PreventBack'])->group(function () {
-    Auth::routes();
-});
+Route::get('shop',[UserController::class,'shop'])->name('user.shop');
+
 
 Route::get('products',["uses"=>"ProductController@index",'as'=>'user.dashboard'] );
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/profil', [App\Http\Controllers\HomeController::class,'index'])->name('home');
 
 
 Route::group(['prefix'=>'admin','middleware'=>['isAdmin','auth','PreventBack']],function(){
@@ -68,10 +72,11 @@ Route::get('cart',["uses"=>"ProductController@showCart",'as'=>'cartProduct'] );
 Route::get('product/deleteFromCart/{id}',["uses"=>"ProductController@deleteFromCart",'as'=>'deleteItemFromCart']);
 Route::get('product/createOrder',["uses"=>"ProductController@createOrder",'as'=>'createOrder']);
 Route::get('product/checkout',["uses"=>"ProductController@checkoutproducts",'as'=>'checkoutproduct']);
+Route::get('payment/payment-process',["uses"=>"Payment\PaymentsController@showPaymentPage",'as'=>'showPaymentPage']);
 });
 
 
-Route::get('shop',[UserController::class,'shop'])->name('user.shop');
+
 
 
 

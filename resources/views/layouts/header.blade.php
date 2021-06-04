@@ -67,7 +67,7 @@
                                             @if (Route::has('login'))
                                            
                                                 @auth
-                                                    <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">profil</a>
+                                                    <a href="{{url('/profil') }}" class="text-sm text-gray-700 underline">profil</a>
                                                
                                                    
                                                 @else

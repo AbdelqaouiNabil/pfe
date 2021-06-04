@@ -83,7 +83,7 @@ public function createOrder(){
   // delete cart
         Session::forget('cart');
       //  Session::flush();
-        return redirect('products')->with('success','thanks for choosing Us');
+        return redirect()->route('showPaymentPage');
 
     }else{
          return redirect()->back();
