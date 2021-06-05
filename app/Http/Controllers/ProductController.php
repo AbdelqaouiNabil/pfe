@@ -64,7 +64,7 @@ class ProductController extends Controller
 public function checkoutproducts(){
     return view('user.checkoutproduct');
 }
-public function createOrder(){
+/*public function createOrder(){
     $cart = Session::get('cart');
     // verifie that the cart is not empty
     if($cart){
@@ -88,7 +88,7 @@ public function createOrder(){
     }else{
          return redirect()->back();
     }
-}
+}*/
 
 
 }

@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\Payment\PaymentsController;
+use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\CategorieController;
 
 /*
@@ -70,14 +70,13 @@ Route::group(['prefix'=>'user','middleware'=>['isUser','auth','PreventBack']],fu
 Route::get('product/addToCart/{id}',["uses"=>"ProductController@AddProductToCart",'as'=>'addToCartProduct'] );
 Route::get('cart',["uses"=>"ProductController@showCart",'as'=>'cartProduct'] );
 Route::get('product/deleteFromCart/{id}',["uses"=>"ProductController@deleteFromCart",'as'=>'deleteItemFromCart']);
-Route::get('product/createOrder',["uses"=>"ProductController@createOrder",'as'=>'createOrder']);
-Route::get('product/checkout',["uses"=>"ProductController@checkoutproducts",'as'=>'checkoutproduct']);
-Route::get('payment/payment-process',["uses"=>"Payment\PaymentsController@showPaymentPage",'as'=>'showPaymentPage']);
+//Route::get('product/createOrder',["uses"=>"ProductController@createOrder",'as'=>'createOrder']);
+
 });
 
-
-
-
+Route::get('product/checkout',["uses"=>"ProductController@checkoutproducts",'as'=>'checkoutproduct']);
+Route::post('payment/payment-process',["uses"=>"PaymentsController@createOrder",'as'=>'createOrder']);
+Route::get('payment/Confirme-payment',["uses"=>"PaymentsController@showPaymentPage",'as'=>'showPaymentPage']);
 
 
 

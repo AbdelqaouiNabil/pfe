@@ -5,7 +5,8 @@
     <div class="row justify-content-center">
       <div class="col-6 mt-5">
         <h1 class="text-center mb-5">Checkout Form</h1>
-    <form class="form-contact contact_form" action="/createNewOrder" method="POST">
+    <form class="form-contact contact_form" action="/payment/payment-process" method="POST">
+        @csrf
         <div class="row">
             <div class="col-12">
                 <div class="form-group">
