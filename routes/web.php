@@ -21,7 +21,14 @@ use App\Http\Controllers\CategorieController;
 Route::middleware(['middleware'=>'PreventBack'])->group(function () {
   Auth::routes();
 });
-
+Route::get('/About', function () {
+  return view('about');
+    
+});
+Route::get('/Contact', function () {
+  return view('contact');
+    
+});
 Route::get('categories/watches',[CategorieController::class,'index'])->name('watches');
 Route::get('categories/glasses',[CategorieController::class,'glasses'])->name('glasses');
 Route::get('categories/jackets',[CategorieController::class,'jackets'])->name('jackets');
@@ -38,6 +45,8 @@ Route::get('/profil', [App\Http\Controllers\HomeController::class,'index'])->nam
 Route::group(['prefix'=>'admin','middleware'=>['isAdmin','auth','PreventBack']],function(){
 
          Route::get('Dashboard',[AdminController::class,'index'])->name('admin.dashboard');
+         Route::get('listerClients',[AdminController::class,'listerClient'])->name('listerClient');
+         Route::get('listerAdmins',[AdminController::class,'listerAdmin'])->name('listerAdmin');
          Route::post('admin/delete',[AdminController::class,'del'] )->name('del');
          // edit for display edit image product
 Route::get('editImageProduct/{id}',["uses"=>"AdminController@editImage",'as'=>'editImageProduct'] );
@@ -52,8 +61,16 @@ Route::post('updateImage/{id}',["uses"=>"AdminController@updateImage",'as'=>'upd
 
   // add new product form  
 Route::get('addNewProductForm/',["uses"=>"AdminController@addProductForm",'as'=>'addProductForm'] );
+// lister Orders
+Route::get('orders/',["uses"=>"AdminController@listerOrders",'as'=>'listerOrder'] );
+//Lister Orders item
+Route::get('ordersItem/',["uses"=>"AdminController@listerOrdersItem",'as'=>'listerOrderItem'] );
  // add new product method
 Route::post('addProduct/',["uses"=>"AdminController@addProduct",'as'=>'addProduct'] );
+ // add new Categorie form  
+ Route::get('addNewCategorieForm/',["uses"=>"AdminController@addCategorieForm",'as'=>'addCategorieForm'] );
+// add Categorie
+Route::post('addCategorie/',["uses"=>"AdminController@addCategorie",'as'=>'addCategorie'] );
 // remove product
 Route::get('remove/{id}',["uses"=>"AdminController@removeProduct",'as'=>'remove'] );
 });

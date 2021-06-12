@@ -11,7 +11,7 @@
 <div class="table-responsive">
   <form action="{{route('del')}}" method="POST">
     @csrf
-    <button type="submit" class="btn btn-danger" id="deleteAllSelectedProducts"> Delete Selected</button>
+    <button type="submit" class="btn btn-danger mb-5" id="deleteAllSelectedProducts"> Delete Selected</button>
 <table class="table table-striped">
     <tr>
       <th><input type="checkbox" id="checkAll"></th>
@@ -21,6 +21,7 @@
   <th>price</th>
   <th>image</th>
   <th>type</th>
+  <th>genre</th>
   <th>Edit image</th>
   <th>edit</th>
   <th>Remove</th>
@@ -34,6 +35,7 @@
       <td>{{$product->price}}</td>
       <td><img src="<?php echo Storage::url('products_images/'.$product->image)   ?>" alt="<?php echo Storage::url($product->image)   ?> " width="100px"></td>
       <td>{{$product->type}}</td>
+      <td>{{$product->Genre}}</td>
       <td><a href="{{route('editImageProduct',['id'=> $product->id ]) }}" class="btn btn-primary">Edit Image</a></td>
       <td><a href="{{route('editProduct',['id'=> $product->id ])}}" class="btn btn-primary">Edit</a></td>
       <td><a href="{{route('remove',['id'=> $product->id ])}}" class="btn btn-danger">Remove</a></td>

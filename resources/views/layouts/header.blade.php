@@ -5,7 +5,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="{{asset('assets/img/logo/loder.png')}}" alt="">
+                    <h1>All100</h1>
                 </div>
             </div>
         </div>
@@ -28,16 +28,8 @@
                                     <ul id="navigation">
                                         <li><a href="{{route('homeshop')}}">Home</a></li> 
                                         <li><a href="{{route('user.dashboard')}}">shop</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="blog.html">Blog</a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog_details.html">Blog Details</a></li>
-                                                <li><a href="elements.html">Elements</a></li>
-                                                <li><a href="product_details.html">Product Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="{{url('/About')}}">About</a></li>
+                                        <li><a href="{{url('/Contact')}}">Contact</a></li>
                                     </ul>
                                 </nav>
                             </div>   

@@ -151,31 +151,26 @@
         </div>
         <div class="row">
            
-           
-        
-   
-
-            @foreach ($products as $product)
-                 
+           @foreach ($products as $product)
            
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                <div class="single-new-arrival mb-50 text-center">
-                    <div class="popular-img">
-                        <img src="{{Storage::disk('local')->url('products_images/'.$product->image)}}" alt="">
-                      
-                    </div>
-                    <div class="popular-caption">
-                     <h3><a href="product_details.html">{{$product->name}}</a></h3>
-                  
-                    <span>{{$product->price}}</span>
-                    <div class="room-btn mt-20">
-                        <a href="{{route('addToCartProduct',['id'=>$product->id])}}" class="border-btn">Add To Cart</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        @endforeach
-
+           <div class="single-new-arrival mb-50 text-center">
+               <div class="popular-img">
+                   <img src="{{Storage::disk('local')->url('products_images/'.$product->image)}}" alt="">
+                 
+               </div>
+               <div class="popular-caption">
+                <h3><a href="product_details.html">{{$product->name}}</a></h3>
+             
+               <span>{{$product->price}}</span>
+               <div class="room-btn mt-20">
+                   <a href="{{route('addToCartProduct',['id'=>$product->id])}}" class="border-btn">Add To Cart</a>
+               </div>
+           </div>
+       </div>
+   </div>
+      
+      @endforeach
 
 </div>
 <!-- Button -->

@@ -23,6 +23,14 @@
                         <input type="text" class="form-control" name="type" placeholder="type" value="{{$products->type}}">
                     </div>
                     <div class="form-group">
+                        <label for="type"> Genre :  </label>
+                        <select name="genre" class="form-select" >
+                            <option value="Men">Men</option>
+                            <option value="Women">Women</option>
+                            <option value="Kids">Kids</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="price"> Price </label>
                         <input type="text" class="form-control" name="price" placeholder="Price" value="{{$products->price}}">
                     </div>

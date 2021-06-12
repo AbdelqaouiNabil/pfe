@@ -21,11 +21,19 @@
                     <input type="text" class="form-control" name="type" placeholder="type" >
                 </div>
                 <div class="form-group">
-                    <label for="price"> Price </label>
-                    <input type="text" class="form-control" name="price" placeholder="Price" >
+                    <label for="type"> Genre :  </label>
+                    <select name="genre" class="form-select" >
+                        <option value="Men">Men</option>
+                        <option value="Women">Women</option>
+                        <option value="Kids">Kids</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="categories"> categorie ixd</label>
+                    <label for="price"> Price </label>
+                    <input type="text" class="form-control" readonly name="price" placeholder="Price" value="100">
+                </div>
+                <div class="form-group">
+                    <label for="categories"> categorie </label>
                     <input type="text" class="form-control" name="categorie" placeholder="categorie" >
                 </div>
                 <div class="form-group">
@@ -33,7 +41,7 @@
                     <br>
                     <input name='image' type="file" >
                   </div>
-                <button type="submit" name="submit" class="btn btn-outline-info "> Edit </button>
+                <button type="submit" name="submit" class="btn btn-outline-info "> add product </button>
                 </form>
             </div>
         </div>
