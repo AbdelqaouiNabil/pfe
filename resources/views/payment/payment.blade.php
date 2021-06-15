@@ -300,7 +300,7 @@
 <script src="{{asset('./assets/js/plugins.js')}}"></script>
 <script src="{{asset('./assets/js/main.js')}}"></script>
 <script
-src="https://www.paypal.com/sdk/js?client-id=AZzEpoAdB_orRTnu2gCGqFoQvjb1T4_UYveO_ZbXsTRtjQqYaDAbHMe_mzK6xmvcGBAyNNk1ZDPA-yYZ"> // Required. Replace YOUR_CLIENT_ID with your sandbox client ID.
+src="https://www.paypal.com/sdk/js?client-id=ASIwnhJ3PSP1Lv6ssX14aLnqHXymduTJGqVGMzy2euRwz2146dLyoVN9i2XT4wtRkBPmRl0v9jaRQW2D"> // Required. Replace YOUR_CLIENT_ID with your sandbox client ID.
 </script>
 <script>
     paypal.Buttons({
@@ -320,6 +320,8 @@ src="https://www.paypal.com/sdk/js?client-id=AZzEpoAdB_orRTnu2gCGqFoQvjb1T4_UYve
           // This function shows a transaction success message to your buyer.
           alert('Transaction completed by ' + details.payer.name.given_name);
           console.log(data);
+         
+         // window.location = './paymentDone/'+data.paymentID+'/'+data.payerID;
         });
       }
     }).render('#paypal-button-container');

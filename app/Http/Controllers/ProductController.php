@@ -64,31 +64,7 @@ class ProductController extends Controller
 public function checkoutproducts(){
     return view('user.checkoutproduct');
 }
-/*public function createOrder(){
-    $cart = Session::get('cart');
-    // verifie that the cart is not empty
-    if($cart){
-        $date = date('Y/m/d H:i:s');
-        $newOrderArray = array('status'=>'on_hold','date'=>$date,'del_date'=>$date,'price'=>$cart->totalPrice);
-        $create_order = DB::table('orders')->insert($newOrderArray);
-        $order_id = DB::getPdo()->lastInsertId();
-        foreach($cart->items as $cart->item){
-            $item_id = $cart->item['data']['id'];
-            $item_name = $cart->item['data']['name'];
-            $item_price =str_replace('MAD','',$cart->item['data']['price']) ;
-            $newItemInCurrentOrder = array('id'=>$item_id,'order_id'=>$order_id,'item_name'=>$item_name,'item_price'=>$item_price);
-            $createOrderItems = DB::table('orders_item')->insert($newItemInCurrentOrder);
 
-        }
-  // delete cart
-        Session::forget('cart');
-      //  Session::flush();
-        return redirect()->route('showPaymentPage');
-
-    }else{
-         return redirect()->back();
-    }
-}*/
 
 
 }

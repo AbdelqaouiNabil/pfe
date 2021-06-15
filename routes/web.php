@@ -29,6 +29,10 @@ Route::get('/Contact', function () {
   return view('contact');
     
 });
+Route::get('/rest', function () {
+  return view('auth..passwords.reset');
+    
+});
 Route::get('categories/watches',[CategorieController::class,'index'])->name('watches');
 Route::get('categories/glasses',[CategorieController::class,'glasses'])->name('glasses');
 Route::get('categories/jackets',[CategorieController::class,'jackets'])->name('jackets');
@@ -87,7 +91,8 @@ Route::group(['prefix'=>'user','middleware'=>['isUser','auth','PreventBack']],fu
 Route::get('product/addToCart/{id}',["uses"=>"ProductController@AddProductToCart",'as'=>'addToCartProduct'] );
 Route::get('cart',["uses"=>"ProductController@showCart",'as'=>'cartProduct'] );
 Route::get('product/deleteFromCart/{id}',["uses"=>"ProductController@deleteFromCart",'as'=>'deleteItemFromCart']);
-//Route::get('product/createOrder',["uses"=>"ProductController@createOrder",'as'=>'createOrder']);
+//Route::get('payment/paymentreceipt/{paymentID}/{payerID}',["uses"=>"PaymentsController@showPaymentReceipt",'as'=>'showPaymentReceipt']);
+
 
 });
 
